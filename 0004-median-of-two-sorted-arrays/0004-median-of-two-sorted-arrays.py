@@ -9,11 +9,11 @@ class Solution(object):
         nums1.extend(nums2)
 
         nums1.sort()
-    
+        l = len(nums1)
         # Index of the middle element
         n = len(nums1) // 2
 
-        if len(nums1) % 2 == 0:
+        if l % 2 == 0:
             # If the combined list has an even number of elements, median will be average of the two middle elements
             return float(nums1[n] + nums1[n-1]) / 2
         else:
