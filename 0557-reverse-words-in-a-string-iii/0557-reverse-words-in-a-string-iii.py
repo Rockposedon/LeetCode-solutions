@@ -1,5 +1,5 @@
 # 1st Approach
-'''
+
 class Solution:
     def reverseWords(self, s: str) -> str:
         
@@ -23,4 +23,4 @@ class Solution:
         s = s.split(" ")
         s = s[::-1]
         return " ".join(s)
-        
+'''        
