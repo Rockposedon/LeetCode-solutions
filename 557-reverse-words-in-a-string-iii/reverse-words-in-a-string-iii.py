@@ -1,5 +1,5 @@
 # 1st Approach
-
+'''
 class Solution:
     def reverseWords(self, s: str) -> str:
         
@@ -15,12 +15,12 @@ class Solution:
         
         # join the word and return it    
         return " ".join(b)
-
+'''
 # 2nd Approach
-# class Solution:
-#     def reverseWords(self, s: str) -> str:
-#         s = s[::-1]
-#         s = s.split(" ")
-#         s = s[::-1]
-#         return " ".join(s)
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        s = s[::-1]
+        s = s.split(" ")
+        s = s[::-1]
+        return " ".join(s)
         
