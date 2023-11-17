@@ -48,6 +48,13 @@ class Solution:
         pairs = zip(first_list, second_list_sorted_desc)
 
         # Find the maximum pair sum
-        max_pair_sum = max(pair[0] + pair[1] for pair in pairs)
+        # max_pair_sum = max(pair[0] + pair[1] for pair in pairs)
+        
+        # Find the maximum pair sum while pairing up the elements
+        max_pair_sum = 0
+        for i in range(mid):
+            current_sum = first_list[i] + second_list_sorted_desc[i]
+            max_pair_sum = max(max_pair_sum, current_sum)
+
 
         return max_pair_sum
