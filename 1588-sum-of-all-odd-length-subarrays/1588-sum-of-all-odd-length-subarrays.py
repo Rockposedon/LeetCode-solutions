@@ -1,10 +1,10 @@
 class Solution:
     def sumOddLengthSubarrays(self, arr: List[int]) -> int:
         
+        # sum of elements of array
         sums = 0
         for i in arr:
             sums += i
-        # as each subarray results in 1 element
         result = sums
         
         # Length of the array plus 1 for full array length
