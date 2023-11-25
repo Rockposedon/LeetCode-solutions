@@ -1,5 +1,3 @@
-from typing import List
-
 class Solution:
     def getSumAbsoluteDifferences(self, nums: List[int]) -> List[int]:
         n = len(nums)
@@ -20,11 +18,12 @@ class Solution:
         for i in range(n - 2, -1, -1):
             suffix_sum[i] = suffix_sum[i + 1] + nums[i]
 
-        result = []  # Initialize an empty list to store the final results
+        # Initialize an empty list to store the final results
+        result = []  
 
         # Calculate absolute differences for each element
         for i in range(n):
-            # Step 3.1: Calculate left sum efficiently using prefix sum
+            # Calculate left sum efficiently using prefix sum
             left_sum = i * nums[i] - prefix_sum[i]
 
             # Calculate right sum efficiently using suffix sum
