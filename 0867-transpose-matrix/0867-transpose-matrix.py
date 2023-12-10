@@ -1,3 +1,4 @@
+"""
 class Solution:
     def transpose(self, matrix: List[List[int]]) -> List[List[int]]:
         
@@ -21,3 +22,21 @@ class Solution:
         
         # Return the transposed matrix
         return result_matrix  
+"""
+
+
+""" Another Approach """
+class Solution:
+    def transpose(self, matrix: List[List[int]]) -> List[List[int]]:
+        rows = len(matrix)
+        cols =  len(matrix[0])
+
+        # Create an empty matrix with swapped dimensions
+        result_matrix = [[0] * rows for _ in range(cols)]
+
+        # Iterate through the original matrix and populate the transposed matrix
+        for r in range(rows):
+            for c in range(cols):
+                result_matrix[c][r] = matrix[r][c]
+
+        return result_matrix
