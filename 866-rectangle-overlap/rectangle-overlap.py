@@ -6,4 +6,8 @@ class Solution:
             return False
         elif F == H or E == G or B == D or A == C:
             return False
-        return True        
+        return True    
+        
+        
+  # done by lokesh
+  # a = 10   
