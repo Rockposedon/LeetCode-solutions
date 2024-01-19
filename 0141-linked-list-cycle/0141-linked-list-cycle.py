@@ -11,7 +11,6 @@ class Solution:
         slow = head
         fast = head
 
-        # Use the "tortoise and hare" approach
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
