@@ -1,5 +1,11 @@
 class Solution:
     def checkValidString(self, s: str) -> bool:
+        
+        '''
+        c1 is for left Parenthesis count
+        c2 is for right Parenthesis count
+        '''
+        
         c1 = c2 = 0
         for i in s:
             if i == '(':
