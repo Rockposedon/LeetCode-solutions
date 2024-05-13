@@ -1,25 +1,27 @@
 class Solution:
     def calPoints(self, operations: List[str]) -> int:
-        # List to store scores
-        scores = []
         
-        for i in operations:
+        # an empty list to store the scores
+        new_score = []
+
+        # Iterate through each record in the operations list
+        for record in operations:
             
-            # If operation is '+', add the last two valid scores
-            if i == "+":  
-                scores.append(scores[-1] + scores[-2])
-            
-            # If operation is 'D', double the last valid score
-            elif i == "D":  
-                scores.append(scores[-1] * 2)
-            
-            # If operation is 'C', remove the last valid score
-            elif i == "C":  
-                scores.pop()
-            
-            # If operation is an integer, add it as a valid score
-            else:  
-                scores.append(int(i))
+            # If the record is "D", double the last valid score and append it to the new_score list
+            if record == "D":
+                new_score.append(new_score[-1] * 2)
                 
-        # Return the sum of all valid scores
-        return sum(scores)  
+            # If the record is "C", remove the last valid score from the new_score list
+            elif record == "C":
+                new_score.pop()
+
+            # If the record is "+", add the sum of the last two valid scores and append it to the new_score list
+            elif record == "+":
+                new_score.append(new_score[-1] + new_score[-2])
+                
+            # If the record is a number, convert it to an integer and append it to the new_score list
+            else:
+                new_score.append(int(record))
+        
+        # Return the sum of all the scores in the new_score list
+        return sum(new_score)
