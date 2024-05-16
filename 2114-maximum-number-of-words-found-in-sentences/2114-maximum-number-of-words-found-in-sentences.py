@@ -1,4 +1,4 @@
-class Solution:
+"""class Solution:
     def mostWordsFound(self, sentences: List[str]) -> int:
         
         max_count = 0
@@ -16,4 +16,24 @@ class Solution:
                 max_count = word_count
         
         # Return the maximum word count found
+        return max_count
+"""
+# Without split() funtion
+
+class Solution:
+    def mostWordsFound(self, sentences: List[str]) -> int:
+        max_count = 0
+        for sentence in sentences:
+            word_count = 0
+            # Loop through each character in the sentence
+            for char in sentence:
+                # Check if the character is a space
+                if char == ' ':
+                    # Increment word count if a space is found
+                    word_count += 1
+            # Add 1 to word count to account for the last word (not followed by a space)
+            word_count += 1
+            # Update max_count if necessary
+            if max_count < word_count:
+                max_count = word_count
         return max_count
