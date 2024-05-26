@@ -2,8 +2,7 @@ from functools import cache
 
 class Solution:
     def fib(self, n: int) -> int:
-        # Memoized Fibonacci calculation
-        @cache
+
         def fn(n):
             # Base cases
             if n == 0:
