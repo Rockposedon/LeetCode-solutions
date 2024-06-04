@@ -11,10 +11,11 @@ class Solution:
         if root :
             
             # when root is greater than search node, then left subtree
-            if root.val > val:
-                return self.searchBST(root.left,val)
+            if root.val == val:
+                return root
             # when root is smaller than search node, then right subtree
             elif root.val < val:
                 return self.searchBST(root.right,val)
             else:
-                return root
+                return self.searchBST(root.left,val)
+                
