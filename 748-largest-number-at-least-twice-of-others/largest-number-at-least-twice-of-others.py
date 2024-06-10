@@ -11,11 +11,8 @@ class Solution:
         for i in nums:
             
             # Skip the largest number itself
-            if i!= largest:
-                
-                # If any other number is more than half of the largest number, return -1
-                if i * 2 > largest:
-                    return -1
+            if i!= largest and i*2 >largest:
+                return -1
                 
         # If no such number is found, return the index of the largest number
         return maxIndex
