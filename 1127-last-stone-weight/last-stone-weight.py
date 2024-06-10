@@ -1,4 +1,4 @@
-"""class Solution:
+class Solution:
     def lastStoneWeight(self, stones: List[int]) -> int:
         
         # Sort the stones in descending order
@@ -35,3 +35,4 @@ class Solution:
         
         # Return the last remaining stone or 0 if there are no stones left
         return -heapq.heappop(heap) if heap else 0
+"""
