@@ -22,8 +22,7 @@ class Solution:
             fast = fast.next.next
         
         # Delete the middle node
-        if prev:
-            prev.next = slow.next
+        prev.next = slow.next
         
         # Return the head of the modified list
         return head
