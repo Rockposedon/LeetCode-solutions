@@ -3,7 +3,7 @@
 #     def __init__(self, x):
 #         self.val = x
 #         self.next = None
-
+"""
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
         
@@ -28,3 +28,26 @@ class Solution:
         
         # Return the intersection node (or None if there is no intersection)
         return l1
+"""
+# 2nd approach using dictionary
+
+class Solution:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
+        
+        intersect = {}
+        l1 = headA
+        l2 = headB
+        
+        # Traverse the first linked list and store its nodes in the dictionary
+        while l1:
+            intersect[l1] = True
+            l1 = l1.next
+        
+        # Traverse the second linked list and check if any node is already in the dictionary
+        while l2:
+            if l2 in intersect:
+                return l2
+            l2 = l2.next
+        
+        # If no intersection is found, return None
+        return None
