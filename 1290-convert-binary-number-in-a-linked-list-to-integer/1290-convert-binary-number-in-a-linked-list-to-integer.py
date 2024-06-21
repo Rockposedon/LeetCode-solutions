@@ -3,6 +3,9 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+"""
+# 1st Approach (by storing all values of linked list in array, then convert that array into decimal)
+
 class Solution:
     def getDecimalValue(self, head: ListNode) -> int:
         
@@ -28,4 +31,17 @@ class Solution:
             power -= 1  
         
         return decimal
-    
+"""  
+# 2nd Approach (Without using additional array)
+class Solution:
+    def getDecimalValue(self, head: ListNode) -> int:
+        decimal_value = 0
+        node = head
+
+        # Traverse the linked list
+        while node:
+            # Update the decimal value based on the binary digit
+            decimal_value = decimal_value * 2 + node.val
+            node = node.next
+
+        return decimal_value
