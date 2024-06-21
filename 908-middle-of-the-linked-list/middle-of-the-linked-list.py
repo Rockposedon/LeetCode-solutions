@@ -3,9 +3,10 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-"""
+
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        
         slow = head
         fast = head
         
@@ -16,6 +17,7 @@ class Solution:
         
         # When fast pointer reaches the end, slow pointer will be at the middle
         return slow
+    
 """
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
@@ -33,3 +35,4 @@ class Solution:
         
         # In case the loop exits (shouldn't normally reach here due to return above)
         return l2
+"""
