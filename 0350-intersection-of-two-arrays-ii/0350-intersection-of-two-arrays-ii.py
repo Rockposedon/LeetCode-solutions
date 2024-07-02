@@ -1,28 +1,16 @@
-# class Solution:
-#     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
-#         nums3 = [value for value in nums1 if value in nums2]
-#         return nums3
 class Solution:
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        # Initialize the result list to store the intersection
+        result = []
         
-        nums1.sort()
-        nums2.sort()
+        # Iterate through each element in nums1
+        for i in nums1:
+            # Check if the current element is in nums2
+            if i in nums2:
+                # If it is, append it to the result list
+                result.append(i)
+                # Remove the element from nums2 to handle duplicates correctly
+                nums2.remove(i)
         
-        
-        one=0
-        two=0
-        
-        ans=[]
-        
-        while one < len(nums1) and two < len(nums2):
-            
-            if nums1[one] < nums2[two]:
-                one+=1
-            elif nums2[two] < nums1[one]:
-                two+=1
-            else:
-                
-                ans.append(nums1[one])
-                one+=1
-                two+=1
-        return ans
+        # Return the result list containing the intersection of nums1 and nums2
+        return result
