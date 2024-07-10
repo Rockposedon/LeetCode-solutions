@@ -1,13 +1,15 @@
 class Solution:
     def minOperations(self, logs: List[str]) -> int:
-        stack1 = []
+        stack = []  # Stack to track directory levels
         
         for i in logs:
+            
             if i == "./":
-                continue
+                continue  # Stay in the current directory
             elif i == "../":
-                if stack1:
-                    stack1.pop()
+                if stack:
+                    stack.pop()  # Go up one directory level if possible
             else:
-                stack1.append(i)
-        return len(stack1)
+                stack.append(i)  # Move into a subdirectory
+        
+        return len(stack)  # Return the number of operations needed
